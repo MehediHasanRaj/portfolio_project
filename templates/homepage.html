@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row">
+
+        <div class="col-7">
+
+            {% for p in Profile %}
+
+                <div class="card">
+
+                    <div class="card-body">
+                        <h1 class="card-title" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">{{ p.name }} </h1>
+
+                        <img src="{{ p.images }}" height=300px width=300px
+                             style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
+                        <br>
+                        <h3 class="card-title" style="background-color: beige">{{ p.role }}</h3>
+
+                        <p class="card-text">{{ p.about }}</p>
+
+                        <h3 class="card-title" style="background-color: beige">Education</h3>
+                        <h6 class="h6">M.Sc in Data Science and its Application, University of Essex, UK. [Grade: Distinction]</h6>
+                        <h6 class="h6">B.Sc in Computer Science and Engineering, North South University,BD. [Grade: 1st Class]</h6>
+
+                        <h3 class="card-title" style="background-color: beige">Achievements</h3>
+                        <h6 class="h6">• Published an International Journal paper in the <a href="https://www.worldscientific.com/doi/10.1142/S2196888821500123">Vietnam Journal of Computer Science.</a></h6>
+                        <h6 class="h6">• Joined ACM-ICPC 2019, 2020 and solved 2, and 3 problems respectively</h6>
+
+                        <h3 class="card-title" style="background-color: beige">Links</h3>
+                        <a class="btn btn-secondary" href="https://www.linkedin.com/in/mehedi-hasan-raj/" role="button">LinkedIn</a>
+                        <a class="btn btn-secondary" href="https://github.com/MehediHasanRaj" role="button">Github</a>
+                        <a class="btn btn-secondary" href="mailto:mehedihasanraj007@gmail.com" role="button">Email me</a>
+
+                        <br><br>
+                        <h3 class="card-title"style="background-color: beige">Coding platforms Links</h3>
+                        <a class="btn btn-secondary" href="https://leetcode.com/mehedihasanraj007/" role="button">Leetcode</a>
+                        <a class="btn btn-secondary" href="https://www.hackerrank.com/profile/mehedihasanraj01" role="button">HackerRank</a>
+                        <a class="btn btn-secondary" href="https://codeforces.com/profile/mehedihasanraj007" role="button">Codeforces</a>
+                        <a class="btn btn-secondary" href="https://www.hackerearth.com/@mehedihasanraj007" role="button">HackerEarth</a>
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+
+        <div class="col-5">
+            <div class="row">
+                <div>
+                    <h1 class="h1" style="background-color: beige">Projects</h1>
+                </div>
+                {% for p in Project %}
+                    <div class="col-6">
+
+                        <div class="card">
+
+                            <div class="card-body">
+                                <img src="{{ p.image }}" height=100px width=250px
+                                     style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
+                                <h5 class="card-title">{{ p.title }} </h5>
+                                <p class="card-text">{{ p.summary }}</p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+
+                {% endfor %}
+                <div class="col-4"></div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-12">
+
+            <br>
+            <div style="background-color: greenyellow"><h3>Blogs</h3></div>
+
+            {% for b in Blog %}
+
+                <div class="card">
+
+                    <div class="card-body">
+                        <h5 class="card-title" style="background-color: beige">{{ b.title }}, <i>      {{ b.date }}</i></h5>
+                        <p class="card-text">{{ b.bog }}</p>
+                    </div>
+
+                </div>
+                <br>
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+{% endblock %}
